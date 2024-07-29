@@ -12,23 +12,26 @@ function App() {
   const [result, setResult] = useState([]);
   const [query, setQuery] = useState('cat'); //початкове значення 
   const [isLoading, setIsLoading] = useState(false); // завантаження
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState(false); // помилка
+  const [page, setPage] = useState(0); // довантаження
 
 useEffect(() => {
   const getResult = async() => {
     try {
-      setIsLoading(true)
-      const res = await fetchPhoto(query);
-      setResult(res.results) 
+      setIsLoading(true);
+      setIsError(false);
+      const res = await fetchPhoto(query, page);// запит
+        setResult(prevResults => [...prevResults, ...res.results]);
+      
     }
     catch (error) {
-      setIsError(true)
+      setIsError(true);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  };
-  getResult();
-}, [query])
+  }
+ getResult()
+}, [query, page])
 
 
   
@@ -39,6 +42,10 @@ useEffect(() => {
  {isLoading && <Loader/>}
  {isError && <Eroor/>}
  < ImageGallery items={result}/>
+<button 
+type='submit'
+onClick={()=>setPage(prev => prev + 1)}>Show more</button>
+
 
  </div>)
  

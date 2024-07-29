@@ -1,8 +1,9 @@
 import s from "./ImageCard.module.css"
 
-const ImageCard = ({item}) => {
+const ImageCard = ({item, onClick}) => {
   return (
-    <div>
+    <div onClick={onClick}>
+
        <img 
        className={s.photo}
        src={item.urls.small} 

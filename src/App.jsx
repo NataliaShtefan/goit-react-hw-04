@@ -10,10 +10,11 @@ import Eroor from './components/Error/Eroor';
 function App() {
 
   const [result, setResult] = useState([]);
-  const [query, setQuery] = useState('cat'); //початкове значення 
+  const [query, setQuery] = useState(''); //початкове значення 
   const [isLoading, setIsLoading] = useState(false); // завантаження
   const [isError, setIsError] = useState(false); // помилка
-  const [page, setPage] = useState(0); // довантаження
+  const [page, setPage] = useState(1); // довантаження
+
 
 useEffect(() => {
   const getResult = async() => {
@@ -30,21 +31,27 @@ useEffect(() => {
       setIsLoading(false);
     }
   }
+  if (!query) return
  getResult()
 }, [query, page])
 
+const hendleSetQuery = query =>{
+  setQuery(query);
+  setResult([]);
+  setPage(1);
+}
 
   
  return (
  <div>
 
- <SearchBar setQuery={setQuery}/>
+ <SearchBar setQuery={hendleSetQuery}/>
  {isLoading && <Loader/>}
  {isError && <Eroor/>}
  < ImageGallery items={result}/>
 <button 
-type='submit'
-onClick={()=>setPage(prev => prev + 1)}>Show more</button>
+type='button'
+onClick={()=>{setPage(prev => prev + 1)}}>Show more</button>
 
 
  </div>)

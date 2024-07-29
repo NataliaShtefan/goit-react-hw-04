@@ -1,14 +1,14 @@
 import { Field, Form, Formik } from "formik"
 
 
-const SearchBar = () => {
+const SearchBar = ({setQuery}) => {
 
 const initialValues = {
   query:'',
 }
 
 const hendleSubmit = values => {
-  console.log(values);
+ setQuery(values.query)
 }
 
   return (

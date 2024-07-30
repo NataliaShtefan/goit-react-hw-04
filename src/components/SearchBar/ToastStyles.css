@@ -1,0 +1,17 @@
+/* ToastStyles.css */
+.custom-toast {
+    background-color: #343a40;
+    color: #fff;
+    font-size: 32px;
+  }
+  
+  .custom-toast-error {
+    background-color: #555351;
+    color: #cb7325;
+  }
+  
+  .custom-toast-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  

@@ -1,0 +1,45 @@
+
+.container {
+    padding: 48px;
+}
+.photo {
+    display: flex;
+    justify-content: center;
+}
+
+.author {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.like {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.heart {
+    color: red;
+}
+
+
+.icon {
+    width: 40px;
+    height: 40px;
+    color: orange;
+    transition: transform 0.3s ease; 
+}
+
+.icon:hover, .icon:focus {
+    transform: scale(1.1);
+}

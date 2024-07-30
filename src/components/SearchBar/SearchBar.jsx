@@ -2,7 +2,8 @@ import { Field, Form, Formik } from "formik"
 import toast from "react-hot-toast"
 import { TbPhotoSearch } from "react-icons/tb"
 import s from "./SeachBar.module.css"
-
+import 'react-toastify/dist/ReactToastify.css';
+import './ToastStyles.css';
 
 const SearchBar = ({setQuery}) => {
 
@@ -12,7 +13,11 @@ const initialValues = {
 
 const hendleSubmit = values => {
   if (values.query.trim() === '')
-    return toast.error("This didn't work. You must write anythings...")
+    
+      return toast.error("This didn't work. You must write anythings...", {
+        className: 'custom-toast custom-toast-error',
+        progressClassName: 'custom-progress'
+      })
  setQuery(values.query)
 }
 

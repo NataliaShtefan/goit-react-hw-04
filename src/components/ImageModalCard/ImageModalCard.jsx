@@ -10,7 +10,7 @@ const ImageModalCard = ({image}) => {
   return (
     <div className={s.container}>
      <div className={s.photo}>
-     <img  src={image.urls.regular} alt={image.alt_description}/>
+     <img  className={s.image} src={image.urls.regular} alt={image.alt_description}/>
      </div>
 
     <h2 className={s.author}>Author: {image.user.name}</h2>

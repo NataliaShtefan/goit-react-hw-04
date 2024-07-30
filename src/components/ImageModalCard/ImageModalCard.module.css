@@ -6,7 +6,10 @@
     display: flex;
     justify-content: center;
 }
-
+.image { 
+    max-width: 800px;
+    max-height: 1000px;
+}
 .author {
     font-size: 48px;
     display: flex;

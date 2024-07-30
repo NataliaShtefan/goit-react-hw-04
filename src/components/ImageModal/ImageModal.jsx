@@ -14,6 +14,7 @@ className={s.modal}
       onRequestClose={onRequestClose}
       contentLabel="Image Modal"
       shouldCloseOnEsc={true}  
+      shouldCloseOnOverlayClick={true} 
     >
       <button className={s.btn} onClick={onRequestClose}><IoCloseOutline className={s.icon}/></button>
       {image && <ImageModalCard image={image} />}

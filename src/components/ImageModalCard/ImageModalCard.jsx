@@ -17,9 +17,15 @@ const ImageModalCard = ({image}) => {
     <h3 className={s.like}>Likes: {image.likes} <IoMdHeart className={s.heart}/></h3>
 
 <ul className={s.link}>
-<li><a href={image.user.social.instagram_username}><GrInstagram className={s.icon}/></a></li>
-<li><a href={image.user.social.portfolio_url}><MdOutlinePhotoSizeSelectActual className={s.icon}/></a></li>
-<li><a href={image.user.social.twitter_username}><SlSocialTwitter className={s.icon}/></a></li>
+<li><a href={image.user.social.instagram_username} 
+target="_blank" 
+rel="noopener noreferrer"><GrInstagram className={s.icon}/></a></li>
+<li><a href={image.user.social.portfolio_url}
+target="_blank" 
+rel="noopener noreferrer"><MdOutlinePhotoSizeSelectActual className={s.icon}/></a></li>
+<li><a href={image.user.social.twitter_username}
+target="_blank" 
+rel="noopener noreferrer"><SlSocialTwitter className={s.icon}/></a></li>
 </ul>
     </div>
   )

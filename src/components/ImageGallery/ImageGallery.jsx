@@ -5,10 +5,11 @@ import s from "./ImageGallery.module.css"
 
 const ImageGallery = ({items, onImageClick}) => {
   return (
-    <div>
+    <div className={s.container}>
       <ul className={s.list}>
         {items.map(item => (
-         <li key={item.id}>
+         <li className={s.item}
+          key={item.id}>
          < ImageCard item={item}
          onClick={() => onImageClick(item)}/>
          </li>

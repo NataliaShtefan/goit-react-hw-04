@@ -7,6 +7,8 @@ import Loader from './components/Loader/Loader';
 import Eroor from './components/Error/Eroor';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 import ImageModal from './components/ImageModal/ImageModal';
+import { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
@@ -62,16 +64,21 @@ const closeModal = () => {
 
  <SearchBar setQuery={hendleSetQuery}/>
 
- {isLoading && <Loader/>}
 
  {isError && <Eroor/>}
 
  < ImageGallery items={result} onImageClick={handleImageClick}/>
 
+
+ {isLoading && <Loader/>}
+
 {total > page && <LoadMoreBtn onClick={()=>{setPage(prev => prev + 1)}}/>}
 
 <ImageModal isOpen={isModalOpen} onRequestClose={closeModal} image={selectedImage} />
+
+< Toaster/>
  </div>)
+ 
  
 
 }
